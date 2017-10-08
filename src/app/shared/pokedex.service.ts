@@ -37,6 +37,7 @@ export class PokedexService {
       .toPromise()
       .then((res: Response) => {
         let data = res.json();
+        let allPokemonsUnsorted = [];
         let allPokemons = [];
 
         data.objects.forEach((object) => {
@@ -50,7 +51,8 @@ export class PokedexService {
             pokemon.types.push(object.types[1].name);
           }
 
-          allPokemons.push(pokemon);
+          allPokemonsUnsorted.push(pokemon);
+          allPokemons = allPokemonsUnsorted.sort((a, b) => a.id - b.id);
         });
 
         return allPokemons;
