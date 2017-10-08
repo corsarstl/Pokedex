@@ -12,7 +12,7 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class PokedexService {
 
-  pokemons = {};
+  // pokemons = {};
   private baseUrl: string = 'https://pokeapi.co/api/v1/pokemon/?limit=12';
   private baseImageUrl: string = 'https://pokeapi.co/media/img/';
 
@@ -25,27 +25,50 @@ export class PokedexService {
   //     .then(response => response.json().results)
   // }
 
-  getAllPokemons(): Observable<Pokemon[]>  {
-    return this.http.get(`${this.baseUrl}`)
-      .map((response: Response) => <Pokemon[]> response.json())
-      .do(data => console.log(data))
-      .catch(this.handleError);
-  }
-
-  private handleError(error: Response) {
-    console.error(error);
-    let message = `Error status code ${error.status} at ${error.url}`;
-    return Observable.throw(message);
-  }
-
-  // getBooks(): Observable<IBook[]> {
-  //   return this._http
-  //     .get('api/books/books.json')
-
-  //     .map((response: Response) => <IBook[]> response.json())
-  //     // .do(data => console.log(data))
-  //     .catch(this.handleError)
+  // getAllPokemons(): Observable<Pokemon[]>  {
+  //   return this.http.get(`${this.baseUrl}`)
+  //     .map((response: Response) => <Pokemon[]> response.json())
+  //     .do(data => )
+  //     .catch(this.handleError);
   // }
-  //
+
+  getAllPokemons() {
+    return this.http.get(`${this.baseUrl}`)
+      .toPromise()
+      .then((res: Response) => {
+        let data = res.json();
+        let allPokemons = [];
+
+        data.objects.forEach((object) => {
+          let pokemon = new Pokemon();
+          pokemon.id = object.national_id;
+          pokemon.name = object.name;
+          pokemon.types = [];
+          pokemon.types.push(object.types[0].name);
+
+          if (object.types[1] !== undefined) {
+            pokemon.types.push(object.types[1].name);
+          }
+
+          allPokemons.push(pokemon);
+        });
+
+        return allPokemons;
+      })
+      .catch (this.handleError);
+  }
+
+  private handleError (error: Response | any) {
+    let errMsg: string;
+    if (error instanceof Response) {
+      const body = error.json() || '';
+      const err = body.error || JSON.stringify(body);
+      errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+    } else {
+      errMsg = error.message ? error.message : error.toString();
+    }
+    console.error(errMsg);
+    return Promise.reject(errMsg);
+  }
 
 }

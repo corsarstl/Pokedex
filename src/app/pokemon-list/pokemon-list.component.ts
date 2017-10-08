@@ -9,21 +9,25 @@ import { Pokemon } from '../pokemon';
 })
 export class PokemonListComponent implements OnInit {
 
-  pokemons: Pokemon[];
-  errorMessage: string;
+  pokemon: Pokemon[];
+  // errorMessage: string;
 
   constructor(private pokedexService: PokedexService) { }
 
-  ngOnInit() {
-    this.getPokemons();
+  ngOnInit(): void {
+    this.pokedexService.getAllPokemons()
+      .then((pokemon) => {
+        this.pokemon = pokemon;
+        console.log(pokemon);
+      });
   }
 
-  getPokemons() {
-    this.pokedexService.getAllPokemons()
-      .subscribe(
-        pokemons => this.pokemons = pokemons,
-        error => this.errorMessage = <any>error
-      );
-  }
+  // getPokemons() {
+  //   this.pokedexService.getAllPokemons()
+  //     .subscribe(
+  //       pokemons => this.pokemons = pokemons,
+  //       error => this.errorMessage = <any>error
+  //     );
+  // }
 
 }
