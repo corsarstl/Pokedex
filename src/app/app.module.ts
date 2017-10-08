@@ -1,22 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { Http } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { MinPokemonComponent } from './min-pokemon.component';
-import { DetailedPokemonComponent } from './detailed-pokemon/detailed-pokemon.component';
+
+import { PokedexService } from './shared/pokedex.service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    MinPokemonComponent,
-    DetailedPokemonComponent
+    NavbarComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    Http
   ],
-  providers: [],
+  providers: [
+    PokedexService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
