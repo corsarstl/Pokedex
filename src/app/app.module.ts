@@ -7,13 +7,15 @@ import { NavbarComponent } from './navbar/navbar.component';
 
 import { PokedexService } from './shared/pokedex.service';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    PokemonListComponent
+    PokemonListComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,

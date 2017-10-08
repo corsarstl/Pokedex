@@ -9,16 +9,16 @@ import { Pokemon } from '../pokemon';
 })
 export class PokemonListComponent implements OnInit {
 
-  pokemon: Pokemon[];
+  pokemons: Pokemon[];
   // errorMessage: string;
 
   constructor(private pokedexService: PokedexService) { }
 
   ngOnInit(): void {
     this.pokedexService.getAllPokemons()
-      .then((pokemon) => {
-        this.pokemon = pokemon;
-        console.log(pokemon);
+      .then((pokemons) => {
+        this.pokemons = pokemons;
+        console.log(pokemons);
       });
   }
 

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Input } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Pokemon } from '../pokemon';
@@ -12,9 +12,10 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class PokedexService {
 
+  @Input() baseImageUrl: string = 'https://pokeapi.co/media/img/';
   // pokemons = {};
   private baseUrl: string = 'https://pokeapi.co/api/v1/pokemon/?limit=12';
-  private baseImageUrl: string = 'https://pokeapi.co/media/img/';
+
 
 
   constructor(private http: Http) { }
