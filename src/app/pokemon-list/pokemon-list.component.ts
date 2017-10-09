@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PokedexService } from '../shared/pokedex.service';
 import { Pokemon } from '../pokemon';
 
@@ -11,6 +11,7 @@ export class PokemonListComponent implements OnInit {
 
   pokemons: Pokemon[];
   public selectedPokemon = Pokemon;
+  public isSelected = false;
 
   constructor(private pokedexService: PokedexService) { }
 
@@ -27,6 +28,7 @@ export class PokemonListComponent implements OnInit {
   }
 
   getPokemonDetailes(selectedPokemon) {
+    this.isSelected = true;
     this.pokedexService.getOnePokemon(selectedPokemon);
   }
 

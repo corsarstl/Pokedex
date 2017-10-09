@@ -9,6 +9,7 @@ import { PokedexService } from './shared/pokedex.service';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AllPokemonsComponent } from './all-pokemons/all-pokemons.component';
+import { PokemonInfoComponent } from './pokemon-info/pokemon-info.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { AllPokemonsComponent } from './all-pokemons/all-pokemons.component';
     NavbarComponent,
     PokemonListComponent,
     WelcomeComponent,
-    AllPokemonsComponent
+    AllPokemonsComponent,
+    PokemonInfoComponent
   ],
   imports: [
     BrowserModule,

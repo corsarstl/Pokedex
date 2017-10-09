@@ -1,6 +1,6 @@
 <div class="container "> <!--col-sm-8 col-md-7 col-lg-7-->
     <div class="row">
-        <div class="swing col-xs-6 col-sm-4 col-md-4 cl-lg-4"
+        <div class="swing col-xs-12 col-sm-4 col-md-4 cl-lg-4"
              *ngFor="let pokemon of pokemons">
             <div class="thumbnail pok-card"
                  (click)="onSelect(pokemon)"
@@ -23,9 +23,20 @@
         </div>
         <button type="button" class="btn btn-primary btn-lg btn-block"
                 (click)="getPokemonDetailes(selectedPokemon)">
-                <!--(click)="isSelected = true-->
             Load More
         </button>
     </div>
 </div>
+<div class="container col-sm-0 col-md-5 col-lg-5">
+    <div class="row">
+        <div *ngIf="!isSelected">
+            <pok-welcome></pok-welcome>
+        </div>
+        <div *ngIf="isSelected">
+            <pok-pokemon-info></pok-pokemon-info>
+        </div>
+    </div>
+</div>
+
+
 
