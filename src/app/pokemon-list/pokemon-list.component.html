@@ -1,8 +1,13 @@
 <div class="container "> <!--col-sm-8 col-md-7 col-lg-7-->
     <div class="row">
-        <div class="col-xs-6 col-sm-6 col-md-4 cl-lg-4"
-             *ngFor="let pokemon of pokemons">
-            <div class="thumbnail">
+        <div class="swing col-xs-6 col-sm-4 col-md-4 cl-lg-4"
+             *ngFor="let pokemon of pokemons, let i = index">
+           <!-- (click)="pokemonSelect(i)"
+            (click)="isSelected = true"
+            [ngClass]="{'active': selectedIndex == index, 'isSelected': true}-->
+            <div class="thumbnail pok-card"
+                 (click)="onSelect(pokemon)"
+                 [class.selected]="pokemon === selectedPokemon">
                 <img class="img img-responsive img-rounded center-block"
                      src="../../assets/images/mock_pokemon.png" alt="pokemonImage"> <!--https://pokeapi.co/media/img/{{pokemon.id}}.png-->
                 <h3>{{pokemon.name}}</h3>
