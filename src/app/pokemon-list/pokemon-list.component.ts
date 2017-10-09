@@ -11,10 +11,6 @@ export class PokemonListComponent implements OnInit {
 
   pokemons: Pokemon[];
   public selectedPokemon = Pokemon;
-  // public isSelected = false;
-  // selectedIndex: number;
-
-  // errorMessage: string;
 
   constructor(private pokedexService: PokedexService) { }
 
@@ -33,22 +29,5 @@ export class PokemonListComponent implements OnInit {
   getPokemonDetailes(selectedPokemon) {
     this.pokedexService.getOnePokemon(selectedPokemon);
   }
-
-  // onSelect(pokemon) {
-  //   this.selectedPokemon = pokemon;
-  //   this.isSelected = true;
-  // }
-  // public pokemonSelect(index: number) {
-  //   this.selectedIndex = index;  // don't forget to update the model here
-  //   // ... do other stuff here ...
-  // }
-
-  // getPokemons() {
-  //   this.pokedexService.getAllPokemons()
-  //     .subscribe(
-  //       pokemons => this.pokemons = pokemons,
-  //       error => this.errorMessage = <any>error
-  //     );
-  // }
 
 }
