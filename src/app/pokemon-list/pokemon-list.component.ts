@@ -30,6 +30,10 @@ export class PokemonListComponent implements OnInit {
     this.selectedPokemon =  pokemon;
   }
 
+  getPokemonDetailes(selectedPokemon) {
+    this.pokedexService.getOnePokemon(selectedPokemon);
+  }
+
   // onSelect(pokemon) {
   //   this.selectedPokemon = pokemon;
   //   this.isSelected = true;

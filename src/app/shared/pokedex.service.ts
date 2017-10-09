@@ -14,7 +14,7 @@ export class PokedexService {
 
   @Input() baseImageUrl: string = 'https://pokeapi.co/media/img/';
   // pokemons = {};
-  private baseUrl: string = 'https://pokeapi.co/api/v1/pokemon/?limit=12';
+  private baseUrl: string = 'https://pokeapi.co/api/v1/pokemon/?limit=3';
 
 
 
@@ -61,17 +61,13 @@ export class PokedexService {
       .catch (this.handleError);
   }
 
-  private handleError (error: Response | any) {
-    let errMsg: string;
-    if (error instanceof Response) {
-      const body = error.json() || '';
-      const err = body.error || JSON.stringify(body);
-      errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
-    } else {
-      errMsg = error.message ? error.message : error.toString();
-    }
-    console.error(errMsg);
-    return Promise.reject(errMsg);
+  getOnePokemon(selectedPokemon) {
+    console.log(selectedPokemon.id);
+  }
+
+  private handleError(error: any): Promise<any> {
+    console.error('An error occurred', error);
+    return Promise.reject(error.message || error);
   }
 
 }
