@@ -1,7 +1,6 @@
 export class PokemonDetails {
   number: number;       // national_id
   name: string;         // name
-  imageUrl: string;     // https://pokeapi.co/media/img/{{id}}.png
   types: string[];      // types
   attack: number;       // attack
   defense: number;      // defense
