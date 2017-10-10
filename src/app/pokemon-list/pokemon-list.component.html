@@ -10,7 +10,7 @@
              *ngFor="let pokemon of pokemons">
           <div class="thumbnail pok-card"
                (click)="onSelect(pokemon)"
-               [class.selected]="pokemon === selectedPokemon">
+               [class.selectedCard]="pokemon === selectedPokemon">
             <img class="img img-responsive img-rounded center-block"
                  src="../../assets/images/mock_pokemon.png" alt="pokemonImage">
             <!--https://pokeapi.co/media/img/{{pokemon.id}}.png-->
@@ -21,8 +21,7 @@
               <span class="label label-success label-font">{{pokemon.types[1]}}</span>
             </div>
             <div>
-              <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-              &nbsp;&nbsp;&nbsp;&nbsp;
+              <pok-favorite [favoritePokemon]="pokemon"></pok-favorite>
               <span class="pokemon-id">#{{pokemon.id}}</span>
             </div>
           </div>

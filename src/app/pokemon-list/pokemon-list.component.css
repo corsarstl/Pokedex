@@ -1,15 +1,11 @@
-.glyphicon {
-    font-size: 2.5rem;
-}
-
 .pokemon-id {
     font-size: 3rem;
+    margin-left: 40px;
 }
 
 .pokemon-cards {
     display: flex;
     flex-wrap: wrap;
-
 }
 
 .pok-card {
@@ -28,12 +24,12 @@
     height: calc(100% - 20px);
 }
 
-.selected {
+.selectedCard {
     border: 2px solid red;
 }
 
 .label-font {
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 .no-gutters {
@@ -53,24 +49,24 @@
 
 @-webkit-keyframes swing {
     15% {
-        -webkit-transform: translateX(9px);
-        transform: translateX(9px);
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
     }
     30% {
-        -webkit-transform: translateX(-9px);
-        transform: translateX(-9px);
+        -webkit-transform: translateX(-5px);
+        transform: translateX(-5px);
     }
     40% {
-        -webkit-transform: translateX(6px);
-        transform: translateX(6px);
-    }
-    50% {
-        -webkit-transform: translateX(-6px);
-        transform: translateX(-6px);
-    }
-    65% {
         -webkit-transform: translateX(3px);
         transform: translateX(3px);
+    }
+    50% {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    65% {
+        -webkit-transform: translateX(1px);
+        transform: translateX(1px);
     }
     100% {
         -webkit-transform: translateX(0);
@@ -80,24 +76,24 @@
 
 @keyframes swing {
     15% {
-        -webkit-transform: translateX(9px);
-        transform: translateX(9px);
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
     }
     30% {
-        -webkit-transform: translateX(-9px);
-        transform: translateX(-9px);
+        -webkit-transform: translateX(-5px);
+        transform: translateX(-5px);
     }
     40% {
-        -webkit-transform: translateX(6px);
-        transform: translateX(6px);
-    }
-    50% {
-        -webkit-transform: translateX(-6px);
-        transform: translateX(-6px);
-    }
-    65% {
         -webkit-transform: translateX(3px);
         transform: translateX(3px);
+    }
+    50% {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    65% {
+        -webkit-transform: translateX(1px);
+        transform: translateX(1px);
     }
     100% {
         -webkit-transform: translateX(0);
@@ -106,8 +102,8 @@
 }
 
 .swing:hover {
-    -webkit-animation: swing 0.6s ease;
-    animation: swing 0.6s ease;
+    -webkit-animation: swing 0.5s ease;
+    animation: swing 0.5s ease;
     -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1;
 }

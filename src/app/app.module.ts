@@ -10,6 +10,7 @@ import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AllPokemonsComponent } from './all-pokemons/all-pokemons.component';
 import { PokemonInfoComponent } from './pokemon-info/pokemon-info.component';
+import { FavoriteComponent } from './favorite/favorite.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { PokemonInfoComponent } from './pokemon-info/pokemon-info.component';
     PokemonListComponent,
     WelcomeComponent,
     AllPokemonsComponent,
-    PokemonInfoComponent
+    PokemonInfoComponent,
+    FavoriteComponent
   ],
   imports: [
     BrowserModule,

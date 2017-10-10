@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PokedexService } from '../shared/pokedex.service';
 import { Pokemon } from '../pokemon';
 

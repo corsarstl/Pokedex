@@ -1,5 +1,6 @@
 import { Injectable, Input } from '@angular/core';
 import { Http, Response } from '@angular/http';
+
 import { Pokemon } from '../pokemon';
 import { PokemonDetails } from '../pokemon-details';
 
@@ -12,8 +13,8 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class PokedexService {
 
-  @Input() baseImageUrl: string = 'https://pokeapi.co/media/img/';
-  private baseUrl: string = 'https://pokeapi.co/api/v1/pokemon/';
+  @Input() baseImageUrl = 'https://pokeapi.co/media/img/';
+  private baseUrl = 'https://pokeapi.co/api/v1/pokemon/';
 
   constructor(private http: Http) { }
 
@@ -80,5 +81,40 @@ export class PokedexService {
     console.error('An error occurred', error);
     return Promise.reject(error.message || error);
   }
+
+  toFavorites(favoritePokemon) {
+    let savedFavoritesObj = JSON.parse(localStorage.getItem('favoritePokemons'));
+    savedFavoritesObj ? this.addToFavorites(favoritePokemon, savedFavoritesObj) : this.saveToFavorites(favoritePokemon);
+  }
+
+  addToFavorites(favoritePokemon, savedFavoritesObj) {
+    let key = favoritePokemon.name;
+    savedFavoritesObj[`${key}`] = favoritePokemon;
+
+    let savedFavoritesStr = JSON.stringify(savedFavoritesObj);
+    localStorage.setItem('favoritePokemons', savedFavoritesStr);
+    console.log(`Pokemon "${favoritePokemon.name}" was added to Favorites`);
+  }
+
+  saveToFavorites(favoritePokemon) {
+    let savedFavorites = {};
+    let key = favoritePokemon.name;
+    savedFavorites[`${key}`] = favoritePokemon;
+
+    let PokemonStr = JSON.stringify(savedFavorites);
+    localStorage.setItem('favoritePokemons', PokemonStr);
+    console.log(`Pokemon "${favoritePokemon.name}" was saved to Favorites`);
+  }
+
+  removeFromFavorites(favoritePokemon) {
+    let savedFavoritesObj = JSON.parse(localStorage.getItem('favoritePokemons'));
+    let key = favoritePokemon.name;
+
+    delete savedFavoritesObj[`${key}`];
+
+    let updatedSavedFavoritesStr = JSON.stringify(savedFavoritesObj);
+    localStorage.setItem('favoritePokemons', updatedSavedFavoritesStr);
+    console.log(`Pokemon "${favoritePokemon.name}" was removed from Favorites`);
+    }
 
 }

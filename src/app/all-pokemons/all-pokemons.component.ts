@@ -2,8 +2,10 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'pok-all-pokemons',
-  templateUrl: './all-pokemons.component.html',
-  // styleUrls: ['./all-pokemons.component.css']
+  template: `
+      <pok-navbar></pok-navbar>
+      <pok-pokemon-list></pok-pokemon-list>
+  `,
   styles: []
 })
 export class AllPokemonsComponent {
