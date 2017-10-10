@@ -1,0 +1,7 @@
+.welcome-box {
+  margin: 10px;
+}
+
+@media (max-width: 768px) {
+  .welcome-box {display: none}
+}
