@@ -77,7 +77,8 @@ export class PokedexService {
   }
 
   getFavoritePokemons() {
-    // todo
+    let pokemons = JSON.parse(localStorage.getItem('favoritePokemons'));
+    return pokemons;
   }
 
   private handleError(error: any): Promise<any> {
@@ -91,8 +92,7 @@ export class PokedexService {
   }
 
   addToFavorites(favoritePokemon, savedFavoritesObj) {
-    let key = favoritePokemon.name;
-    savedFavoritesObj[`${key}`] = favoritePokemon;
+    savedFavoritesObj.push(favoritePokemon);
 
     let savedFavoritesStr = JSON.stringify(savedFavoritesObj);
     localStorage.setItem('favoritePokemons', savedFavoritesStr);
@@ -100,9 +100,8 @@ export class PokedexService {
   }
 
   saveToFavorites(favoritePokemon) {
-    let savedFavorites = {};
-    let key = favoritePokemon.name;
-    savedFavorites[`${key}`] = favoritePokemon;
+    let savedFavorites = [];
+    savedFavorites.push(favoritePokemon);
 
     let PokemonStr = JSON.stringify(savedFavorites);
     localStorage.setItem('favoritePokemons', PokemonStr);
@@ -111,11 +110,14 @@ export class PokedexService {
 
   removeFromFavorites(favoritePokemon) {
     let savedFavoritesObj = JSON.parse(localStorage.getItem('favoritePokemons'));
-    let key = favoritePokemon.name;
 
-    delete savedFavoritesObj[`${key}`];
+    let updatedSavedFavorites = savedFavoritesObj.filter(function (item) {
+      if (item.id !== favoritePokemon.id) {
+        return item;
+      }
+    });
 
-    let updatedSavedFavoritesStr = JSON.stringify(savedFavoritesObj);
+    let updatedSavedFavoritesStr = JSON.stringify(updatedSavedFavorites);
     localStorage.setItem('favoritePokemons', updatedSavedFavoritesStr);
     console.log(`Pokemon "${favoritePokemon.name}" was removed from Favorites`);
     }
