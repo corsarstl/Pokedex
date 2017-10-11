@@ -4,13 +4,14 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
-
 import { PokedexService } from './shared/pokedex.service';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AllPokemonsComponent } from './all-pokemons/all-pokemons.component';
 import { PokemonInfoComponent } from './pokemon-info/pokemon-info.component';
 import { FavoriteComponent } from './favorite/favorite.component';
+import { FavoritePokemonsComponent } from './favorite-pokemons/favorite-pokemons.component';
+import { FavoritePokemonListComponent } from './favorite-pokemon-list/favorite-pokemon-list.component';
 
 
 @NgModule({
@@ -21,7 +22,9 @@ import { FavoriteComponent } from './favorite/favorite.component';
     WelcomeComponent,
     AllPokemonsComponent,
     PokemonInfoComponent,
-    FavoriteComponent
+    FavoriteComponent,
+    FavoritePokemonsComponent,
+    FavoritePokemonListComponent
   ],
   imports: [
     BrowserModule,

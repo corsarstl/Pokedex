@@ -1,0 +1,48 @@
+<div class="container-fliud">
+  <div class="row no-gutters">
+
+    <!-- Pokemon cards list-->
+    <div class="col-sm-8 col-md-7 col-lg-7">
+      <div class="row pokemon-cards no-gutters">
+
+        <!-- Pokemon card -->
+        <div class="swing col-xs-6 col-sm-6 col-md-4 col-lg-4 pok-card-col"
+             *ngFor="let pokemon of pokemons">
+          <div class="thumbnail pok-card"
+               (click)="onSelect(pokemon)"
+               (click)="hidePrevPokemonInfo()"
+               [class.selectedCard]="pokemon === selectedPokemon">
+            <img class="img img-responsive img-rounded center-block"
+                 src="../../assets/images/mock_pokemon.png" alt="pokemonImage">
+            <!--https://pokeapi.co/media/img/{{pokemon.id}}.png-->
+            <p class="pok-name">{{pokemon.name}}<br/> <span class="pokemon-id">#{{pokemon.id}}</span></p>
+            <hr class="hr"/>
+            <div>
+              <span class="label label-success label-font">{{pokemon.types[0]}}</span>
+              <span class="label label-success label-font">{{pokemon.types[1]}}</span>
+            </div>
+            <div>
+              <pok-favorite [favoritePokemon]="pokemon"></pok-favorite>
+            </div>
+          </div>
+        </div> <!-- end of Pokemon card -->
+
+        <!-- Load more pockemons button -->
+        <button type="button" class="show-details-btn btn btn-primary btn-lg btn-block"
+                data-toggle="tooltip" title="Show pokemon details!"
+                (click)="getPokemonDetailes()">
+          Load More
+        </button>
+      </div>
+    </div> <!-- end of Pokemon cards list -->
+
+    <div class="container col-sm-4 col-md-5 col-lg-5">
+      <div class="row no-gutters">
+        <pok-welcome *ngIf="!toDisplayDetails"></pok-welcome>
+        <pok-pokemon-info *ngIf="toDisplayDetails"
+                          [pokemonToDisplay]="selectedPokemon">
+        </pok-pokemon-info>
+      </div>
+    </div>
+  </div>
+</div>
