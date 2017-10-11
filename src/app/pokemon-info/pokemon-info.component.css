@@ -1,3 +1,12 @@
 .pokemon-info-block {
-  margin: 10px;
+  margin: 0 auto;
+  padding: 25px;
+  max-width: 400px;
+  background-color: #f4dd9a;
+}
+
+#pok-table td {
+  border: 2px solid #b1b496;
+  box-shadow: inset 0px 0px 10px rgba(0,0,0,1);
+  text-align: center;
 }

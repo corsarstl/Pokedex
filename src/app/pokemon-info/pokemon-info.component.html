@@ -1,3 +1,58 @@
-<div class="pokemon-info-block">
-  pokemon-info works!
+<div class="pokemon-info-block jumbotron">
+
+  <!--https://pokeapi.co/media/img/{{pokemon.id}}.png [src]=baseImageUrl-->
+
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading pok-name">
+      <span class=""></span>
+      <span class="pokemon-id">{{ pokemonToDisplay.name }}&nbsp;#{{ pokemonToDisplay.number }}</span> </div>
+    <div class="panel-body">
+      <img class="img img-responsive img-rounded center-block"
+           src="../../assets/images/mock_pokemon.png" alt="pokemonImage">
+    </div>
+
+    <!-- Table -->
+    <table id="pok-table" class="table">
+      <tr>
+        <td>Type</td>
+        <td>{{ pokemonToDisplay.types[0] }} {{ pokemonToDisplay.types[1] }}</td>
+      </tr>
+      <tr>
+        <td>Attack</td>
+        <td>{{ pokemonToDisplay.attack }}</td>
+      </tr>
+      <tr>
+        <td>Defense</td>
+        <td>{{ pokemonToDisplay.defense }}</td>
+      </tr>
+      <tr>
+        <td>HP</td>
+        <td>{{ pokemonToDisplay.hp }}</td>
+      </tr>
+      <tr>
+        <td>SP Attack</td>
+        <td>{{ pokemonToDisplay.spAttack }}</td>
+      </tr>
+      <tr>
+        <td>SP Defense</td>
+        <td>{{ pokemonToDisplay.spDefense }}</td>
+      </tr>
+      <tr>
+        <td>Speed</td>
+        <td>{{ pokemonToDisplay.speed }}</td>
+      </tr>
+      <tr>
+        <td>Weight</td>
+        <td>{{ pokemonToDisplay.weight }}</td>
+      </tr>
+      <tr>
+        <td>Total moves</td>
+        <td>{{ pokemonToDisplay.totalMoves }}</td>
+      </tr>
+    </table>
+  </div>
 </div>
+
+
+

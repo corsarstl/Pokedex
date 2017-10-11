@@ -10,14 +10,17 @@ import { PokedexService } from '../shared/pokedex.service';
 })
 export class PokemonInfoComponent implements OnInit {
 
-
   @ Input() pokemonToDisplay: PokemonDetails;
+  baseImageUrl = 'https://pokeapi.co/media/img/8';
 
   constructor(private pokedexService: PokedexService) { }
 
-  ngOnInit() {
-    this.pokedexService.getOnePokemon(this.pokemonToDisplay);
-    console.log(this.pokemonToDisplay);
+  ngOnInit(): void {
+    this.pokedexService.getOnePokemon(this.pokemonToDisplay)
+      .then((pokemon) => {
+        this.pokemonToDisplay = pokemon;
+        console.log(pokemon);
+    });
   }
 
 }

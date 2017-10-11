@@ -19,7 +19,7 @@ export class PokedexService {
   constructor(private http: Http) { }
 
   getAllPokemons() {
-    return this.http.get(`${this.baseUrl}?limit=12`)
+    return this.http.get(`${this.baseUrl}?limit=3`)
       .toPromise()
       .then((res: Response) => {
         let data = res.json();
@@ -46,8 +46,8 @@ export class PokedexService {
       .catch (this.handleError);
   }
 
-  getOnePokemon(selectedPokemon) {
-    return this.http.get(`${this.baseUrl}${selectedPokemon.id}`)
+  getOnePokemon(pokemonToDisplay) {
+    return this.http.get(`${this.baseUrl}${pokemonToDisplay.id}`)
       .toPromise()
       .then((res: Response) => {
         let data = res.json();

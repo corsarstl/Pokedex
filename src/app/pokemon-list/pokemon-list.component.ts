@@ -11,7 +11,6 @@ export class PokemonListComponent implements OnInit {
 
   pokemons: Pokemon[];
   public selectedPokemon = Pokemon;
-  public isSelected = false;
   public toDisplayDetails = false;
 
   constructor(private pokedexService: PokedexService) { }

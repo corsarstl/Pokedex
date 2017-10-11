@@ -12,8 +12,8 @@ import { Pokemon } from '../pokemon';
       </span>
   `,
   styles: [`.faveSelected { color: red; }
-  .glyphicon { font-size: 2.7rem; }
-  .glyphicon-heart:hover { cursor: copy; }`]
+            .glyphicon { font-size: 2.7rem; padding-top: 10px; }
+            .glyphicon-heart:hover { cursor: copy; }`]
 })
 export class FavoriteComponent {
 

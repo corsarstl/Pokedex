@@ -14,15 +14,14 @@
             <img class="img img-responsive img-rounded center-block"
                  src="../../assets/images/mock_pokemon.png" alt="pokemonImage">
             <!--https://pokeapi.co/media/img/{{pokemon.id}}.png-->
-            <h3>{{pokemon.name}}</h3>
-            <hr/>
+            <p class="pok-name">{{pokemon.name}} <span class="pokemon-id">#{{pokemon.id}}</span></p>
+            <hr class="hr"/>
             <div>
               <span class="label label-success label-font">{{pokemon.types[0]}}</span>
               <span class="label label-success label-font">{{pokemon.types[1]}}</span>
             </div>
             <div>
               <pok-favorite [favoritePokemon]="pokemon"></pok-favorite>
-              <span class="pokemon-id">#{{pokemon.id}}</span>
             </div>
           </div>
         </div> <!-- end of Pokemon card -->
@@ -37,12 +36,15 @@
 
     <div class="container col-sm-4 col-md-5 col-lg-5">
       <div class="row no-gutters">
-        <div *ngIf="!toDisplayDetails">
-          <pok-welcome></pok-welcome>
-        </div>
-        <div *ngIf="toDisplayDetails">
-          <pok-pokemon-info [pokemonToDisplay]="selectedPokemon"></pok-pokemon-info>
-        </div>
+        <!--<div >-->
+          <pok-welcome *ngIf="!toDisplayDetails"></pok-welcome>
+        <!--</div>-->
+        <!--<div >-->
+          <pok-pokemon-info *ngIf="toDisplayDetails"
+                            [pokemonToDisplay]="selectedPokemon">
+
+          </pok-pokemon-info>
+        <!--</div>-->
       </div>
     </div>
   </div>
