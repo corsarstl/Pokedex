@@ -13,7 +13,7 @@ import { Pokemon } from '../pokemon';
   `,
   styles: [`.faveSelected { color: red; }
   .glyphicon { font-size: 2.7rem; }
-  .glyphicon:hover { cursor: grabbing;}`]
+  .glyphicon-heart:hover { cursor: copy; }`]
 })
 export class FavoriteComponent {
 
