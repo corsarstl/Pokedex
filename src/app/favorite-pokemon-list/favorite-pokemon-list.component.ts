@@ -16,7 +16,8 @@ export class FavoritePokemonListComponent implements OnInit {
   constructor(private pokedexService: PokedexService) { }
 
   ngOnInit(): void {
-    this.pokedexService.getFavoritePokemons()
+    // this.pokedexService.getFavoritePokemons()
+    this.pokedexService.getAllPokemons()
       .then((pokemons) => {
         this.pokemons = pokemons;
         console.log(pokemons);

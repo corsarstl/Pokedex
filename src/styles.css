@@ -12,3 +12,9 @@ body {
     background: fixed url("assets/images/body_background.jpg");
     background-size: cover;
 }
+
+.navbar {
+    top: 0;
+    position: sticky;
+    z-index: 2;
+}
