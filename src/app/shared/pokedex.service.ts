@@ -117,6 +117,13 @@ export class PokedexService {
       }
     });
 
+    if (updatedSavedFavorites.length < 1) {
+      localStorage.clear();
+      console.log(`Pokemon "${favoritePokemon.name}" was removed from Favorites`);
+      console.log('Local storage is empty!');
+      return;
+    }
+
     let updatedSavedFavoritesStr = JSON.stringify(updatedSavedFavorites);
     localStorage.setItem('favoritePokemons', updatedSavedFavoritesStr);
     console.log(`Pokemon "${favoritePokemon.name}" was removed from Favorites`);

@@ -19,6 +19,7 @@ import { Pokemon } from '../pokemon';
 export class FavoriteComponent {
 
   public isFavorite = false;
+  // public alreadyFavorite = false;
   @Input() favoritePokemon: Pokemon[];
 
   constructor(private pokedexService: PokedexService) { }
