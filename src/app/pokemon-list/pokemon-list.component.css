@@ -1,6 +1,7 @@
 .pokemon-cards {
     display: flex;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .pok-card {
@@ -48,6 +49,10 @@
 
 .show-details-btn {
   margin: 10px;
+  left: 0; bottom: 0;
+    position: -webkit-sticky;
+    position: sticky;
+    /*overflow: auto;*/
 }
 
 @-webkit-keyframes swing {

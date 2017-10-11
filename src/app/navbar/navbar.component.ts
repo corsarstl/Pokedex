@@ -3,8 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'pok-navbar',
   templateUrl: './navbar.component.html',
-  // styleUrls: ['./navbar.component.css']
-  styles: []
+  styles: [`.navbar { top: 0; position: sticky; z-index: 2;}`]
 })
 export class NavbarComponent {
 }
