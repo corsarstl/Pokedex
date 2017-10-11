@@ -48,7 +48,7 @@ export class PokedexService {
 
   getOnePokemon(pokemonToDisplay) {
     return this.http.get(`${this.baseUrl}${pokemonToDisplay.id}`)
-      .toPromise()
+    .toPromise()
       .then((res: Response) => {
         let data = res.json();
         let pokemonDetails = new PokemonDetails();

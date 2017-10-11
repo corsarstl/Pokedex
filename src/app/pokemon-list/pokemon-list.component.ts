@@ -27,6 +27,10 @@ export class PokemonListComponent implements OnInit {
     this.selectedPokemon =  pokemon;
   }
 
+  hidePrevPokemonInfo() {
+    this.toDisplayDetails = false;
+  }
+
   getPokemonDetailes() {
     this.toDisplayDetails = true;
   }
