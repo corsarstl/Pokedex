@@ -12,6 +12,7 @@ export class PokemonListComponent implements OnInit {
   pokemons: Pokemon[];
   public selectedPokemon = Pokemon;
   public isSelected = false;
+  public toDisplayDetails = false;
 
   constructor(private pokedexService: PokedexService) { }
 
@@ -27,9 +28,8 @@ export class PokemonListComponent implements OnInit {
     this.selectedPokemon =  pokemon;
   }
 
-  getPokemonDetailes(selectedPokemon) {
-    this.isSelected = true;
-    this.pokedexService.getOnePokemon(selectedPokemon);
+  getPokemonDetailes() {
+    this.toDisplayDetails = true;
   }
 
 }

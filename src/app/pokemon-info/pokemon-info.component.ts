@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
 import { PokemonDetails } from '../pokemon-details';
+import { PokedexService } from '../shared/pokedex.service';
 
 @Component({
   selector: 'pok-pokemon-info',
   templateUrl: './pokemon-info.component.html',
   styleUrls: ['./pokemon-info.component.css']
 })
-export class PokemonInfoComponent /*implements OnInit*/ {
+export class PokemonInfoComponent implements OnInit {
 
-  // ngOnInit(pokemonDetails) {
-  //   console.log(pokemonDetails);
-  // }
+
+  @ Input() pokemonToDisplay: PokemonDetails;
+
+  constructor(private pokedexService: PokedexService) { }
+
+  ngOnInit() {
+    this.pokedexService.getOnePokemon(this.pokemonToDisplay);
+    console.log(this.pokemonToDisplay);
+  }
 
 }

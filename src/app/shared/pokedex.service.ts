@@ -70,7 +70,6 @@ export class PokedexService {
         pokemonDetails.speed = data.speed;
         pokemonDetails.weight = data.weight;
         pokemonDetails.totalMoves = data.moves.length;
-        console.log(pokemonDetails);
 
         return pokemonDetails;
       })

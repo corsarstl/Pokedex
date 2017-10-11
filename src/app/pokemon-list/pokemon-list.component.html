@@ -29,7 +29,7 @@
 
         <!-- Load more pockemons button -->
         <button type="button" class="show-details-btn btn btn-primary btn-lg btn-block"
-                (click)="getPokemonDetailes(selectedPokemon)">
+                (click)="getPokemonDetailes()">
           Load More
         </button>
       </div>
@@ -37,11 +37,11 @@
 
     <div class="container col-sm-4 col-md-5 col-lg-5">
       <div class="row no-gutters">
-        <div *ngIf="!isSelected">
+        <div *ngIf="!toDisplayDetails">
           <pok-welcome></pok-welcome>
         </div>
-        <div *ngIf="isSelected">
-          <pok-pokemon-info></pok-pokemon-info>
+        <div *ngIf="toDisplayDetails">
+          <pok-pokemon-info [pokemonToDisplay]="selectedPokemon"></pok-pokemon-info>
         </div>
       </div>
     </div>
