@@ -2,7 +2,8 @@
   margin: 0 auto;
   padding: 25px;
   max-width: 400px;
-  background-color: #f4dd9a;
+  background-color: #337ab7;
+  border-color: #204d74;
 }
 
 #pok-table td {

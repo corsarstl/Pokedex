@@ -7,6 +7,7 @@ import { Pokemon } from '../pokemon';
   selector: 'pok-favorite',
   template: `
       <span class="glyphicon glyphicon-heart" aria-hidden="true"
+            data-toggle="tooltip" [title]="isFavorite ? 'Remove from Favorites' : 'Add to Favorites'"
             [class.faveSelected]="isFaveSelected(isFavorite)"
             (click)="toggleFavorite(favoritePokemon)">
       </span>
