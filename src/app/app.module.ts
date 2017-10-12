@@ -4,13 +4,14 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { PokedexService } from './shared/pokedex.service';
 import { PokemonListComponent } from './pokemon-list/pokemon-list.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { PokemonInfoComponent } from './pokemon-info/pokemon-info.component';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { FavoritePokemonListComponent } from './favorite-pokemon-list/favorite-pokemon-list.component';
 import { LoaderComponent } from './shared/loader/loader.component';
+
+import { PokedexService } from './shared/pokedex.service';
 import { CapitalizePipe } from './shared/capitalize.pipe';
 import { ThreeDigitNumberPipe } from './shared/three-digit-number.pipe';
 
