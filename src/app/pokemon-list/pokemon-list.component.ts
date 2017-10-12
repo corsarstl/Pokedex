@@ -12,6 +12,7 @@ export class PokemonListComponent implements OnInit {
   pokemons: Pokemon[];
   public selectedPokemon = Pokemon;
   public toDisplayDetails = false;
+  // baseImageUrl = 'https://pokeapi.co/media/img/';
 
   constructor(private pokedexService: PokedexService) { }
 

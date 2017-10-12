@@ -1,5 +1,5 @@
 export class PokemonDetails {
-  number: number;       // national_id
+  id: number;           // national_id
   name: string;         // name
   types: string[];      // types
   attack: number;       // attack

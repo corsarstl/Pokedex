@@ -13,8 +13,9 @@
                (click)="hidePrevPokemonInfo()"
                [class.selectedCard]="pokemon === selectedPokemon">
             <img class="img img-responsive img-rounded center-block"
-                 src="../../assets/images/mock_pokemon.png" alt="pokemonImage">
-            <!--https://pokeapi.co/media/img/{{pokemon.id}}.png-->
+                 src= "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{ pokemon.id }}.png"
+                 alt="pokemonImage"
+                 width=75%>
             <p class="pok-name">{{pokemon.name}}<br/> <span class="pokemon-id">#{{pokemon.id}}</span></p>
             <hr class="hr"/>
             <div>

@@ -1,15 +1,15 @@
 <div class="pokemon-info-block jumbotron">
 
-  <!--https://pokeapi.co/media/img/{{pokemon.id}}.png [src]=baseImageUrl-->
-
   <div class="panel panel-default">
     <!-- Default panel contents -->
     <div class="panel-heading pok-name">
       <span class=""></span>
-      <span class="pokemon-id">{{ pokemonToDisplay.name }}&nbsp;#{{ pokemonToDisplay.number }}</span> </div>
+      <span class="pokemon-id">{{ pokemonToDisplay.name }}&nbsp;#{{ pokemonToDisplay.id }}</span> </div>
     <div class="panel-body">
       <img class="img img-responsive img-rounded center-block"
-           src="../../assets/images/mock_pokemon.png" alt="pokemonImage">
+           src= "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{ pokemonToDisplay.id }}.png"
+           alt="pokemonImage"
+           width=50%>
     </div>
 
     <!-- Table -->
@@ -53,6 +53,3 @@
     </table>
   </div>
 </div>
-
-
-

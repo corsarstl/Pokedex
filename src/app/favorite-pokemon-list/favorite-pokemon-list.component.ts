@@ -12,14 +12,12 @@ export class FavoritePokemonListComponent implements OnInit {
   pokemons: Pokemon[];
   public selectedPokemon = Pokemon;
   public toDisplayDetails = false;
-  // public isFavorite = true;
 
   constructor(private pokedexService: PokedexService) { }
 
   ngOnInit(): void {
     let pokemons = this.pokedexService.getFavoritePokemons();
     this.pokemons = pokemons;
-    // isFavorite = true;
     return pokemons;
   }
 
