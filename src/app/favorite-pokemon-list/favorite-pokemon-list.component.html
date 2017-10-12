@@ -13,14 +13,14 @@
                (click)="hidePrevPokemonInfo()"
                [class.selectedCard]="pokemon === selectedPokemon">
             <img class="img img-responsive img-rounded center-block"
-                 src= "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{ pokemon.id }}.png"
+                 src= "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{ pokemon.id}}.png"
                  alt="pokemonImage"
                  width=75%>
-            <p class="pok-name">{{pokemon.name}}<br/> <span class="pokemon-id">#{{pokemon.id}}</span></p>
+            <p class="pok-name">{{ pokemon.name }}<br/> <span class="pokemon-id">#{{ pokemon.id }}</span></p>
             <hr class="hr"/>
             <div>
-              <span class="label label-success label-font">{{pokemon.types[0]}}</span>
-              <span class="label label-success label-font">{{pokemon.types[1]}}</span>
+              <span class="label label-success label-font">{{ pokemon.types[0] }}</span>
+              <span class="label label-success label-font">{{ pokemon.types[1] }}</span>
             </div>
             <div>
               <pok-favorite [favoritePokemon]="pokemon"></pok-favorite>

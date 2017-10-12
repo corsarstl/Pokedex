@@ -9,7 +9,7 @@ export class ThreeDigitNumberPipe implements PipeTransform {
     let arr = [];
     arr.push(value);
 
-    if (arr.length === 1) {
+    if (arr.length === 2) {
       arr.unshift(0);
       // arr.unshift(0);
     } /*else if (arr.length < 3) {
