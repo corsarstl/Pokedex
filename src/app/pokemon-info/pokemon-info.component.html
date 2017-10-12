@@ -1,7 +1,7 @@
+<pok-loader [loading]="loading"></pok-loader>
 <div class="pokemon-info-block jumbotron">
-
   <div class="panel panel-default">
-    <!-- Default panel contents -->
+
     <div class="panel-heading pok-name">
       <span class=""></span>
       <span class="pokemon-id">{{ pokemonToDisplay.name }}&nbsp;#{{ pokemonToDisplay.id }}</span> </div>
@@ -12,11 +12,10 @@
            width=50%>
     </div>
 
-    <!-- Table -->
     <table id="pok-table" class="table">
       <tr>
         <td>Type</td>
-        <td>{{ pokemonToDisplay.types[0] }} {{ pokemonToDisplay.types[1] }}</td>
+        <td>{{ pokemonToDisplay.types[0] | capitalize }} {{ pokemonToDisplay.types[1] | capitalize }}</td>
       </tr>
       <tr>
         <td>Attack</td>
@@ -51,5 +50,6 @@
         <td>{{ pokemonToDisplay.totalMoves }}</td>
       </tr>
     </table>
+
   </div>
 </div>

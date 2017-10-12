@@ -1,4 +1,6 @@
 .pokemon-info-block {
+  /*position: sticky;*/
+  /*top: 75px;*/
   margin: 0 auto;
   padding: 25px;
   max-width: 400px;

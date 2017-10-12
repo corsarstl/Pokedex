@@ -17,7 +17,7 @@
                  src= "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{ pokemon.id }}.png"
                  alt="pokemonImage"
                  width=75%>
-            <p class="pok-name">{{pokemon.name}}<br/> <span class="pokemon-id">#{{pokemon.id}}</span></p>
+            <p class="pok-name">{{pokemon.name}}<br/> <span class="pokemon-id">{{pokemon.id }}</span></p> <!--| threeDigitNumber-->
             <hr class="hr"/>
             <div>
               <span class="label label-success label-font">{{pokemon.types[0]}}</span>

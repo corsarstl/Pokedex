@@ -11,14 +11,17 @@ import { PokedexService } from '../shared/pokedex.service';
 export class PokemonInfoComponent implements OnInit {
 
   @ Input() pokemonToDisplay: PokemonDetails;
+  public loading = false;
 
   constructor(private pokedexService: PokedexService) { }
 
   ngOnInit(): void {
+    this.loading = true;
     this.pokedexService.getOnePokemon(this.pokemonToDisplay)
       .then((pokemon) => {
         this.pokemonToDisplay = pokemon;
         console.log(pokemon);
+        this.loading = false;
     });
   }
 

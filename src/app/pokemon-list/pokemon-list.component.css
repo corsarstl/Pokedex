@@ -52,7 +52,6 @@
   left: 0; bottom: 0;
     position: -webkit-sticky;
     position: sticky;
-    /*overflow: auto;*/
 }
 
 @-webkit-keyframes swing {
