@@ -13,6 +13,7 @@ import { PokemonInfoComponent } from './pokemon-info/pokemon-info.component';
 import { FavoriteComponent } from './favorite/favorite.component';
 // import { FavoritePokemonsComponent } from './favorite-pokemons/favorite-pokemons.component';
 import { FavoritePokemonListComponent } from './favorite-pokemon-list/favorite-pokemon-list.component';
+import { LoaderComponent } from './shared/loader/loader.component';
 
 const appRoutes: Routes = [
   {
@@ -41,7 +42,8 @@ const appRoutes: Routes = [
     PokemonInfoComponent,
     FavoriteComponent,
     // FavoritePokemonsComponent,
-    FavoritePokemonListComponent
+    FavoritePokemonListComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

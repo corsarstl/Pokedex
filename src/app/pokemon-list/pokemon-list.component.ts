@@ -12,15 +12,17 @@ export class PokemonListComponent implements OnInit {
   pokemons: Pokemon[];
   public selectedPokemon = Pokemon;
   public toDisplayDetails = false;
-  // baseImageUrl = 'https://pokeapi.co/media/img/';
+  public loading = false;
 
   constructor(private pokedexService: PokedexService) { }
 
   ngOnInit(): void {
+    this.loading = true;
     this.pokedexService.getAllPokemons()
       .then((pokemons) => {
         this.pokemons = pokemons;
         console.log(pokemons);
+        this.loading = false;
       });
   }
 
