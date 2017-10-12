@@ -1,5 +1,4 @@
 <div class="container-fliud">
-  <pok-loader [loading]="loading"></pok-loader>
   <div class="row no-gutters">
 
     <!-- Pokemon cards list-->
@@ -37,9 +36,13 @@
       </div>
     </div> <!-- end of Pokemon cards list -->
 
+    <pok-loader [loading]="loading"></pok-loader>
+
     <div class="container col-sm-4 col-md-5 col-lg-5">
       <div class="row no-gutters">
+
           <pok-welcome *ngIf="!toDisplayDetails"></pok-welcome>
+
           <pok-pokemon-info *ngIf="toDisplayDetails"
                             [pokemonToDisplay]="selectedPokemon">
           </pok-pokemon-info>

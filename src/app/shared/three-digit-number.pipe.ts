@@ -6,31 +6,20 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class ThreeDigitNumberPipe implements PipeTransform {
 
   transform(value: number): string {
-    let arr = [];
-    arr.push(value);
+    let i = (String(value).length);
+    let threeDigitNumber = '';
 
-    if (arr.length === 2) {
-      arr.unshift(0);
-      // arr.unshift(0);
-    } /*else if (arr.length < 3) {
-        arr.unshift(0);
+    switch (i) {
+      case 1:
+        threeDigitNumber = `#00${value}`;
+        break;
+      case 2:
+        threeDigitNumber = `#0${value}`;
+        break;
+      case 3:
+        threeDigitNumber = `#${value}`;
+        break;
     }
-*/
-
-    // switch (arr.length) {
-    //   case 2:
-    //     arr.unshift(0);
-    //     break;
-    //   case 1:
-    //     arr.unshift(0);
-    //     arr.unshift(0);
-    //     break;
-    //   case 3:
-    //     break;
-    // }
-
-    let threeDigit = arr.join('');
-    let threeDigitNumber = `#${threeDigit}`;
 
     return threeDigitNumber;
   }

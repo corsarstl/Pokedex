@@ -1,16 +1,18 @@
-<pok-loader [loading]="loading"></pok-loader>
+
 <div class="pokemon-info-block jumbotron">
   <div class="panel panel-default">
 
     <div class="panel-heading pok-name">
       <span class=""></span>
-      <span class="pokemon-id">{{ pokemonToDisplay.name }}&nbsp;#{{ pokemonToDisplay.id }}</span> </div>
+      <span class="pokemon-id">{{ pokemonToDisplay.name }}<br/>{{ pokemonToDisplay.id | threeDigitNumber }}</span> </div>
     <div class="panel-body">
       <img class="img img-responsive img-rounded center-block"
            src= "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{ pokemonToDisplay.id }}.png"
            alt="pokemonImage"
-           width=75%>
+           width=50%>
     </div>
+
+    <pok-loader [loading]="loading"></pok-loader>
 
     <table id="pok-table" class="table">
       <tr>

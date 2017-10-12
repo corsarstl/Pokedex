@@ -1,9 +1,10 @@
 .pokemon-info-block {
-  /*position: sticky;*/
-  /*top: 75px;*/
-  margin: 0 auto;
+  position: fixed;
+  margin: 0 10px;
   padding: 25px;
-  max-width: 400px;
+  width: calc(41.66666667% - 10px);
+  top: 80px;
+  right: 0;
   background-color: #337ab7;
   border-color: #204d74;
 }
@@ -12,4 +13,17 @@
   border: 2px solid #b1b496;
   box-shadow: inset 0px 0px 10px rgba(0,0,0,1);
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  .pokemon-info-block {width: calc(33.33333333% - 10px)}
+}
+
+div.panel-heading.pok-name,
+div.panel-body {
+  padding: 0;
+}
+
+div.pokemon-info-block.jumbotron {
+  padding-bottom: 0;
 }
